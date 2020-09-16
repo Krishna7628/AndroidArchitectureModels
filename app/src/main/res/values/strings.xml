@@ -3,4 +3,9 @@
     <string name="mvc">MVC</string>
     <string name="mvp">MVP</string>
     <string name="mvvm">MVVM</string>
+    <string name="mvp2">MVP2</string>
+    <string name="user_name">User Name</string>
+    <string name="password">Password</string>
+    <string name="mvp3">MVP3</string>
+    <string name="submit">submit</string>
 </resources>

@@ -34,7 +34,6 @@ public class MVPActivityPresenter {
                         countries.add(s.countryName);
                     }
                     view.setValues(countries);
-
                 } else {
 
                 }

@@ -1,7 +1,5 @@
 package com.vamsi.androidarchitecturemodels.mvp;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -10,15 +8,22 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.vamsi.androidarchitecturemodels.MainActivity;
 import com.vamsi.androidarchitecturemodels.R;
-import com.vamsi.androidarchitecturemodels.mvc.MVCActivity;
-import com.vamsi.androidarchitecturemodels.mvc.MVCActivityController;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class MVPActivity extends AppCompatActivity implements MVPActivityPresenter.View{
+public class MVPActivity extends AppCompatActivity implements MVPActivityPresenter.View {
+
+    /*MVP
+     *   Model - this is where we fetch data or interact to the server
+     *   View  - this where Ui code Located
+     *   Presenter - bridge . It helps the view to communicate to model
+     *   */
+
 
     private ListView listView;
     private List<String> listValues = new ArrayList<>();
@@ -43,7 +48,23 @@ public class MVPActivity extends AppCompatActivity implements MVPActivityPresent
             }
         });
 
+
+        findViewById(R.id.btn_button).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(MVPActivity2.getIntent(MVPActivity.this));
+            }
+        });
+
+        findViewById(R.id.btn_button_2).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(MVPActivity3.getIntent(MVPActivity.this));
+            }
+        });
+
     }
+
     public static Intent getIntent(MainActivity mainActivity) {
         return new Intent(mainActivity, MVPActivity.class);
     }
